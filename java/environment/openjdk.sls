@@ -7,6 +7,7 @@ java_archive:
     - name: {{ environment.home_dir }}
     - source: https://download.java.net/java/GA/jdk{{ environment.version }}/{{ environment.version }}.{{ environment.release}}/{{ environment.oracle_hash }}/{{ environment.version }}/openjdk-{{ environment.version }}.{{ environment.release}}_linux-x64_bin.tar.gz
     - options: zxvf
+    - archive_format: tar
     {%- if environment.get('verify_sha256_hash', False) %}
     - source_hash: {{ environment.sha256_hash }}
     {%- else %}
